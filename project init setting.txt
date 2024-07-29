@@ -1,19 +1,37 @@
 # Git init
+
 git clone https://github.com/InfoTechRoad/TechRoad.git
+
 cd TechRoad
 
+
 # Project init setting
+
 npm init -y
+
 npm create vite@latest techroad -- --template react-ts
+
 cd techroad
+
 npm install
 
+npm install react-router-dom styled-components @types/styled-components
+
 # React Frontend Setting
+
 cd techroad
+
 npm install axios
+
 cd ..
+
 
 # React Backend Setting
 mkdir backend
+
 cd backend
-npm install express mysql cors nodemon axios
+
+npm init -y
+
+
+npm install typescript ts-node @types/node @types/express @types/cors @types/bcrypt dotenv mongoose bcrypt
