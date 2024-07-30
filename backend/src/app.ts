@@ -28,7 +28,7 @@ app.post("/login", async (req: Request, res: Response) => {
     if (!user) {
       return res.status(400).json({ message: "Invalid email or password" });
     }
-
+    
     const isPasswordValid = await bcrypt.compare(password, user.password);
 
     if (!isPasswordValid) {
