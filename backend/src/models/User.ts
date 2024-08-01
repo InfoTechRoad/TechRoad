@@ -13,8 +13,14 @@ const userSchema: Schema<IUser> = new Schema({
 
 userSchema.pre<IUser>('save', async function (next) {
   if (this.isModified('password') || this.isNew) {
-    const salt = await bcrypt.genSalt(10);
-    this.password = await bcrypt.hash(this.password, salt);
+    try {
+      const salt = await bcrypt.genSalt(10);
+      const hashedPassword = await bcrypt.hash(this.password, salt);
+      this.password = hashedPassword;
+      console.log('Password hashed successfully');
+    } catch (error) {
+      console.error('Error hashing password:', error);
+    }
   }
   next();
 });

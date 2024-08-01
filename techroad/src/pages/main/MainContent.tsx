@@ -1,6 +1,7 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Login from "../user/Login";
+import UserRegister from "../user/UserRegister";
 
 const mainContentStyle: React.CSSProperties = {
   marginTop: "80px",
@@ -18,6 +19,7 @@ const MainContent: React.FC = () => {
   return (
     <main style={mainContentStyle}>
       <Routes>
+        <Route path="/user/register" element={<UserRegister />} />
         <Route path="/login" element={<Login />} />
       </Routes>
     </main>

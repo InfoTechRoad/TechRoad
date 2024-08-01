@@ -14,7 +14,7 @@ const headerStyle: React.CSSProperties = {
 
 const headerContentStyle: React.CSSProperties = {
   display: "flex",
-  justifyContent: "space-between", // Flexbox 사용하여 좌우 정렬
+  justifyContent: "space-between",
   alignItems: "center", // Flexbox 사용하여 수직 정렬
   width: "100%",
   maxWidth: "1200px", // 헤더 내용의 최대 너비를 설정
@@ -43,6 +43,9 @@ const Header: React.FC = () => {
       <div style={headerContentStyle}>
         <h1 style={h1Style}>Tech Road</h1>
         <nav style={navStyle}>
+          <Link to="/user/register" style={linkStyle}>
+            Register
+          </Link>
           <Link to="/login" style={linkStyle}>
             Login
           </Link>
